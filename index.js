@@ -41,6 +41,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 // API Endpoints
 
 // Add School - POST /addSchool
+
 app.post("/addSchool", async (req, res) => {
   try {
     const { name, address, latitude, longitude } = req.body;
@@ -114,6 +115,14 @@ app.get("/listSchools", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the School Management API!");
+}
+);
+
+https://internship-production-a21b.up.railway.app/
 
 // Error handling middleware
 app.use((err, req, res, next) => {
