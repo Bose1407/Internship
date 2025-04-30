@@ -1,6 +1,3 @@
-Here's the updated README with your deployed base URL:
-
----
 
 # School Management API
 
