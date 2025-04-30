@@ -13,15 +13,17 @@ app.use(bodyParser.json());
 // MySQL Database Connection
 const pool = mysql
   .createPool({
-    host: "localhost",
-    user: "root", // replace with your MySQL username
-    password: "POIUYTREwq21@", // replace with your MySQL password
-    database: "school_management",
+    host: "mysql-cf61fbf-bosebeast2-018a.k.aivencloud.com",
+    user: "avnadmin",
+    password: "AVNS_VLezNWs_dhFkg09OM1K",
+    database: "defaultdb",
+    port: 17024,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
   })
   .promise();
+
 
 // Haversine formula to calculate distance between two coordinates
 function calculateDistance(lat1, lon1, lat2, lon2) {
