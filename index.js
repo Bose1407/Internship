@@ -2,7 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+require("dotenv").config();
 // Create Express app
 const app = express();
 
@@ -13,11 +13,11 @@ app.use(bodyParser.json());
 // MySQL Database Connection
 const pool = mysql
   .createPool({
-    host: "mysql-cf61fbf-bosebeast2-018a.k.aivencloud.com",
-    user: "avnadmin",
-    password: "AVNS_VLezNWs_dhFkg09OM1K",
-    database: "defaultdb",
-    port: 17024,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
